@@ -1,360 +1,646 @@
 # Auction House prices for fully built enhancements (2024 rough estimates, in millions of inf)
-# Organized to match Auction House categories with default pricing
+# Organized by official Homecoming Wiki categories, using YAML anchors for defaults
 
-# =============================================================================
-# DEFAULT PRICING STRUCTURE
-# =============================================================================
 defaults:
-  superior_attuned: 9.0      # ATOs
-  attuned: 4.0               # Attuned sets
-  purple_only: 18.0          # Purple-only sets (Apocalypse, Ragnarok)
-  pvp: 9.0                   # PvP sets
-  winter: 23.0               # Winter sets
-  defense_resist: 5.0        # Defense & Resistance sets
-  damage_sets: 1.2           # Damage-focused crafted sets
-  control_sets: 1.0          # Control-focused crafted sets
-  melee_sets: 1.0            # Melee-focused crafted sets
-  utility_sets: 1.0          # Utility crafted sets
-  healing_sets: 1.0          # Healing crafted sets
-  taunt_sets: 1.0            # Taunt crafted sets
-  special_sets: 2.0          # Special crafted sets (except LotG)
-  lotg: 25.0                 # Luck of the Gambler sets
-  hamidon: 2.0               # Hamidon enhancements
-  common_io: 0.2             # Common IOs
+  superior_attuned: &superior_attuned 9.0
+  attuned: &attuned 4.0
+  purple_only: &purple_only 18.0
+  pvp: &pvp 9.0
+  winter: &winter 23.0
+  defense_resist: &defense_resist 5.0
+  damage_sets: &damage_sets 1.2
+  control_sets: &control_sets 1.0
+  melee_sets: &melee_sets 1.0
+  utility_sets: &utility_sets 1.0
+  healing_sets: &healing_sets 1.0
+  taunt_sets: &taunt_sets 1.0
+  special_sets: &special_sets 2.0
+  lotg: &lotg 5.0
+  hamidon: &hamidon 10.0
+  common_io: &common_io 0.2
 
-# =============================================================================
-# SUPERIOR ATTUNED SETS (ATOs) - Default: 9M each
-# =============================================================================
+# =====================
+# OFFENSIVE SETS
+# =====================
+
+## Melee Damage
+melee_damage:
+  Crafted_Bruising_Blow_A: *melee_sets
+  Crafted_Bruising_Blow_B: *melee_sets
+  Crafted_Crushing_Impact_A: *melee_sets
+  Crafted_Crushing_Impact_B: *melee_sets
+  Crafted_Crushing_Impact_C: *melee_sets
+  Crafted_Crushing_Impact_D: *melee_sets
+  Crafted_Crushing_Impact_E: *melee_sets
+  Crafted_Kinetic_Combat_A: *melee_sets
+  Crafted_Kinetic_Combat_B: *melee_sets
+  Crafted_Kinetic_Combat_C: *melee_sets
+  Crafted_Kinetic_Combat_D: *melee_sets
+  Crafted_Multi_Strike_B: *melee_sets
+  Crafted_Multi_Strike_D: *melee_sets
+  Crafted_Bonesnap_A: *melee_sets
+  Crafted_Bonesnap_B: *melee_sets
+  Crafted_Bonesnap_C: *melee_sets
+  Crafted_Pulverizing_Fisticuffs_A: *melee_sets
+  Crafted_Pulverizing_Fisticuffs_B: *melee_sets
+  Crafted_Pulverizing_Fisticuffs_C: *melee_sets
+  Crafted_Pounding_Slugfest_A: *melee_sets
+  Crafted_Pounding_Slugfest_B: *melee_sets
+  Crafted_Pounding_Slugfest_C: *melee_sets
+  Crafted_Pounding_Slugfest_D: *melee_sets
+  Crafted_Pounding_Slugfest_E: *melee_sets
+  Crafted_Pounding_Slugfest_F: *melee_sets
+
+## Melee AoE Damage
+melee_aoe_damage:
+  Crafted_Armageddon_A: *purple_only
+  Crafted_Armageddon_B: *purple_only
+  Crafted_Armageddon_C: *purple_only
+  Crafted_Armageddon_D: *purple_only
+  Crafted_Armageddon_E: *purple_only
+  Crafted_Armageddon_F: *purple_only
+  Crafted_Obliteration_A: *damage_sets
+  Crafted_Obliteration_B: *damage_sets
+  Crafted_Obliteration_C: *damage_sets
+  Crafted_Obliteration_D: *damage_sets
+  Crafted_Obliteration_E: *damage_sets
+  Crafted_Obliteration_F: 3.0
+  Crafted_Sciroccos_Dervish_A: *damage_sets
+  Crafted_Sciroccos_Dervish_B: *damage_sets
+  Crafted_Sciroccos_Dervish_C: *damage_sets
+  Crafted_Sciroccos_Dervish_D: *damage_sets
+  Crafted_Sciroccos_Dervish_E: *damage_sets
+  Crafted_Sciroccos_Dervish_F: *damage_sets
+  Crafted_Eradication_F: 4.0
+  Crafted_Hecatomb_A : *purple_only
+  Crafted_Hecatomb_C : *purple_only
+  Crafted_Hecatomb_D : *purple_only
+  Crafted_Hecatomb_E : *purple_only
+  Crafted_Hecatomb_F : *purple_only
+
+## Pet Damage
+pet_damage:
+  Crafted_Command_of_the_Mastermind_A: *damage_sets
+  Crafted_Command_of_the_Mastermind_B: *damage_sets
+  Crafted_Command_of_the_Mastermind_C: *damage_sets
+  Crafted_Command_of_the_Mastermind_D: *damage_sets
+  Crafted_Command_of_the_Mastermind_E: *damage_sets
+  Crafted_Command_of_the_Mastermind_F: *damage_sets
+  Crafted_Soulbound_Allegiance_A: *damage_sets
+  Crafted_Soulbound_Allegiance_B: *damage_sets
+  Crafted_Soulbound_Allegiance_C: *damage_sets
+  Crafted_Soulbound_Allegiance_D: *damage_sets
+  Crafted_Soulbound_Allegiance_E: *damage_sets
+  Crafted_Soulbound_Allegiance_F: *damage_sets
+
+## Ranged Damage
+ranged_damage:
+  Crafted_Annihilation_A: *damage_sets
+  Crafted_Annihilation_B: *damage_sets
+  Crafted_Annihilation_C: *damage_sets
+  Crafted_Annihilation_D: *damage_sets
+  Crafted_Annihilation_E: *damage_sets
+  Crafted_Annihilation_F: *damage_sets
+  Crafted_Bombardment_F: 3.0
+  Crafted_Positrons_Blast_A: *damage_sets
+  Crafted_Positrons_Blast_B: *damage_sets
+  Crafted_Positrons_Blast_C: *damage_sets
+  Crafted_Positrons_Blast_D: *damage_sets
+  Crafted_Positrons_Blast_E: *damage_sets
+  Crafted_Positrons_Blast_F: *damage_sets
+  Crafted_Ice_Mistrals_Torment_F: *damage_sets
+  Crafted_Decimation_F: *damage_sets
+  Crafted_Touch_of_Death_A: *damage_sets
+  Crafted_Touch_of_Death_B: *damage_sets
+  Crafted_Touch_of_Death_C: *damage_sets
+  Crafted_Touch_of_Death_D: *damage_sets
+  Crafted_Touch_of_Death_E: *damage_sets
+  Crafted_Touch_of_Death_F: *damage_sets
+  Crafted_Thunderstrike_A: *damage_sets
+  Crafted_Thunderstrike_B: *damage_sets
+  Crafted_Thunderstrike_C: *damage_sets
+  Crafted_Thunderstrike_D: *damage_sets
+  Crafted_Thunderstrike_E: *damage_sets
+  Crafted_Thunderstrike_F: *damage_sets
+  Crafted_Devastation_A: *damage_sets
+  Crafted_Devastation_B: *damage_sets
+  Crafted_Devastation_C: *damage_sets
+  Crafted_Devastation_D: *damage_sets
+  Crafted_Devastation_E: *damage_sets
+  Crafted_Devastation_F: *damage_sets
+  Crafted_Javelin_Volley_A: *damage_sets
+  Crafted_Javelin_Volley_B: *damage_sets
+  Crafted_Javelin_Volley_C: *damage_sets
+  Crafted_Javelin_Volley_D: *damage_sets
+  Crafted_Javelin_Volley_E: *damage_sets
+  Crafted_Javelin_Volley_F: *damage_sets
+  Crafted_Trap_of_the_Hunter_A: *damage_sets
+  Crafted_Trap_of_the_Hunter_B: *damage_sets
+  Crafted_Trap_of_the_Hunter_C: *damage_sets
+  Crafted_Trap_of_the_Hunter_D: *damage_sets
+  Crafted_Trap_of_the_Hunter_E: *damage_sets
+  Crafted_Trap_of_the_Hunter_F: *damage_sets
+
+## Ranged AoE Damage
+ranged_aoe_damage:
+  Crafted_Artillery_A: *damage_sets
+  Crafted_Artillery_B: *damage_sets
+  Crafted_Artillery_C: *damage_sets
+  Crafted_Artillery_D: *damage_sets
+  Crafted_Artillery_E: *damage_sets
+  Crafted_Artillery_F: *damage_sets
+  Crafted_Detonation_A: *damage_sets
+  Crafted_Detonation_B: *damage_sets
+  Crafted_Detonation_C: *damage_sets
+  Crafted_Detonation_D: *damage_sets
+  Crafted_Detonation_E: *damage_sets
+  Crafted_Detonation_F: *damage_sets
+  Crafted_Explosive_Strike_A: *damage_sets
+  Crafted_Explosive_Strike_B: *damage_sets
+  Crafted_Explosive_Strike_C: *damage_sets
+  Crafted_Explosive_Strike_D: *damage_sets
+  Crafted_Explosive_Strike_E: *damage_sets
+  Crafted_Explosive_Strike_F: *damage_sets
+
+## Recharge Intensive Pets
+recharge_intensive_pets:
+  Crafted_Call_to_Arms_A: *damage_sets
+  Crafted_Call_to_Arms_B: *damage_sets
+  Crafted_Call_to_Arms_C: *damage_sets
+  Crafted_Call_to_Arms_D: *damage_sets
+  Crafted_Call_to_Arms_E: *damage_sets
+  Crafted_Call_to_Arms_F: *damage_sets
+  Crafted_Mark_of_Supremacy_A: *damage_sets
+  Crafted_Mark_of_Supremacy_B: *damage_sets
+  Crafted_Mark_of_Supremacy_C: *damage_sets
+  Crafted_Mark_of_Supremacy_D: *damage_sets
+  Crafted_Mark_of_Supremacy_E: *damage_sets
+  Crafted_Mark_of_Supremacy_F: *damage_sets
+
+## Sniper Attacks
+sniper_attacks:
+  Crafted_Sting_of_the_Manticore_A: *damage_sets
+  Crafted_Sting_of_the_Manticore_B: *damage_sets
+  Crafted_Sting_of_the_Manticore_C: *damage_sets
+  Crafted_Sting_of_the_Manticore_D: *damage_sets
+  Crafted_Sting_of_the_Manticore_E: *damage_sets
+  Crafted_Sting_of_the_Manticore_F: *damage_sets
+
+## Universal Damage
+universal_damage:
+  Crafted_Overwhelming_Force_A: *damage_sets
+  Crafted_Overwhelming_Force_B: *damage_sets
+  Crafted_Overwhelming_Force_C: *damage_sets
+  Crafted_Overwhelming_Force_D: *damage_sets
+  Crafted_Overwhelming_Force_E: *damage_sets
+  Crafted_Overwhelming_Force_F: *damage_sets
+
+# =====================
+# ARCHETYPE SETS
+# =====================
+
+## Superior Attuned (ATOs)
 superior_attuned:
-  Superior_Attuned_Superior_Defiant_Barrage_A:
-  Superior_Attuned_Superior_Defiant_Barrage_B:
-  Superior_Attuned_Superior_Defiant_Barrage_C:
-  Superior_Attuned_Superior_Defiant_Barrage_D:
-  Superior_Attuned_Superior_Defiant_Barrage_E:
-  Superior_Attuned_Superior_Defiant_Barrage_F:
-  Superior_Attuned_Superior_Blasters_Wrath_A:
-  Superior_Attuned_Superior_Blasters_Wrath_B:
-  Superior_Attuned_Superior_Blasters_Wrath_C:
-  Superior_Attuned_Superior_Blasters_Wrath_D:
-  Superior_Attuned_Superior_Blasters_Wrath_E:
-  Superior_Attuned_Superior_Blasters_Wrath_F:
-  Superior_Attuned_Superior_Brutes_Fury_A:
-  Superior_Attuned_Superior_Brutes_Fury_C:
-  Superior_Attuned_Superior_Brutes_Fury_D:
-  Superior_Attuned_Superior_Brutes_Fury_E:
-  Superior_Attuned_Superior_Brutes_Fury_F:
-  Superior_Attuned_Superior_Critical_Strikes_F:
-  Superior_Attuned_Superior_Essence_Transfer_A:
-  Superior_Attuned_Superior_Essence_Transfer_B:
-  Superior_Attuned_Superior_Essence_Transfer_C:
-  Superior_Attuned_Superior_Essence_Transfer_D:
-  Superior_Attuned_Superior_Essence_Transfer_E:
-  Superior_Attuned_Superior_Essence_Transfer_F:
-  Superior_Attuned_Superior_Kheldians_Grace_A:
-  Superior_Attuned_Superior_Kheldians_Grace_B:
-  Superior_Attuned_Superior_Kheldians_Grace_C:
-  Superior_Attuned_Superior_Kheldians_Grace_D:
-  Superior_Attuned_Superior_Kheldians_Grace_E:
-  Superior_Attuned_Superior_Kheldians_Grace_F:
-  Superior_Attuned_Superior_Scrappers_Strike_A:
-  Superior_Attuned_Superior_Scrappers_Strike_B:
-  Superior_Attuned_Superior_Scrappers_Strike_C:
-  Superior_Attuned_Superior_Scrappers_Strike_D:
-  Superior_Attuned_Superior_Scrappers_Strike_F:
-  Superior_Attuned_Superior_Unrelenting_Fury_A:
-  Superior_Attuned_Superior_Unrelenting_Fury_E:
-  Superior_Attuned_Superior_Unrelenting_Fury_F:
-  Superior_Attuned_Winters_Bite_A:
-  Superior_Attuned_Winters_Bite_B:
-  Superior_Attuned_Winters_Bite_C:
-  Superior_Attuned_Winters_Bite_D:
-  Superior_Attuned_Winters_Bite_E:
-  Superior_Attuned_Winters_Bite_F:
-  Superior_Attuned_Superior_Might_of_the_Tanker_A:
-  Superior_Attuned_Superior_Might_of_the_Tanker_B:
-  Superior_Attuned_Superior_Might_of_the_Tanker_C:
-  Superior_Attuned_Superior_Might_of_the_Tanker_D:
-  Superior_Attuned_Superior_Might_of_the_Tanker_E:
-  Superior_Attuned_Superior_Might_of_the_Tanker_F:
+  Superior_Attuned_Superior_Defiant_Barrage_A: *superior_attuned
+  Superior_Attuned_Superior_Defiant_Barrage_B: *superior_attuned
+  Superior_Attuned_Superior_Defiant_Barrage_C: *superior_attuned
+  Superior_Attuned_Superior_Defiant_Barrage_D: *superior_attuned
+  Superior_Attuned_Superior_Defiant_Barrage_E: *superior_attuned
+  Superior_Attuned_Superior_Defiant_Barrage_F: *superior_attuned
+  Superior_Attuned_Superior_Blasters_Wrath_A: *superior_attuned
+  Superior_Attuned_Superior_Blasters_Wrath_B: *superior_attuned
+  Superior_Attuned_Superior_Blasters_Wrath_C: *superior_attuned
+  Superior_Attuned_Superior_Blasters_Wrath_D: *superior_attuned
+  Superior_Attuned_Superior_Blasters_Wrath_E: *superior_attuned
+  Superior_Attuned_Superior_Blasters_Wrath_F: *superior_attuned
+  Superior_Attuned_Superior_Brutes_Fury_A: *superior_attuned
+  Superior_Attuned_Superior_Brutes_Fury_C: *superior_attuned
+  Superior_Attuned_Superior_Brutes_Fury_D: *superior_attuned
+  Superior_Attuned_Superior_Brutes_Fury_E: *superior_attuned
+  Superior_Attuned_Superior_Brutes_Fury_F: *superior_attuned
+  Superior_Attuned_Superior_Critical_Strikes_F: *superior_attuned
+  Superior_Attuned_Superior_Essence_Transfer_A: *superior_attuned
+  Superior_Attuned_Superior_Essence_Transfer_B: *superior_attuned
+  Superior_Attuned_Superior_Essence_Transfer_C: *superior_attuned
+  Superior_Attuned_Superior_Essence_Transfer_D: *superior_attuned
+  Superior_Attuned_Superior_Essence_Transfer_E: *superior_attuned
+  Superior_Attuned_Superior_Essence_Transfer_F: *superior_attuned
+  Superior_Attuned_Superior_Kheldians_Grace_A: *superior_attuned
+  Superior_Attuned_Superior_Kheldians_Grace_B: *superior_attuned
+  Superior_Attuned_Superior_Kheldians_Grace_C: *superior_attuned
+  Superior_Attuned_Superior_Kheldians_Grace_D: *superior_attuned
+  Superior_Attuned_Superior_Kheldians_Grace_E: *superior_attuned
+  Superior_Attuned_Superior_Kheldians_Grace_F: *superior_attuned
+  Superior_Attuned_Superior_Scrappers_Strike_A: *superior_attuned
+  Superior_Attuned_Superior_Scrappers_Strike_B: *superior_attuned
+  Superior_Attuned_Superior_Scrappers_Strike_C: *superior_attuned
+  Superior_Attuned_Superior_Scrappers_Strike_D: *superior_attuned
+  Superior_Attuned_Superior_Scrappers_Strike_F: *superior_attuned
+  Superior_Attuned_Superior_Unrelenting_Fury_A: *superior_attuned
+  Superior_Attuned_Superior_Unrelenting_Fury_E: *superior_attuned
+  Superior_Attuned_Superior_Unrelenting_Fury_F: *superior_attuned
+  Superior_Attuned_Winters_Bite_A: *superior_attuned
+  Superior_Attuned_Winters_Bite_B: *superior_attuned
+  Superior_Attuned_Winters_Bite_C: *superior_attuned
+  Superior_Attuned_Winters_Bite_D: *superior_attuned
+  Superior_Attuned_Winters_Bite_E: *superior_attuned
+  Superior_Attuned_Winters_Bite_F: *superior_attuned
+  Superior_Attuned_Superior_Might_of_the_Tanker_A: *superior_attuned
+  Superior_Attuned_Superior_Might_of_the_Tanker_B: *superior_attuned
+  Superior_Attuned_Superior_Might_of_the_Tanker_C: *superior_attuned
+  Superior_Attuned_Superior_Might_of_the_Tanker_D: *superior_attuned
+  Superior_Attuned_Superior_Might_of_the_Tanker_E: *superior_attuned
+  Superior_Attuned_Superior_Might_of_the_Tanker_F: *superior_attuned
+  Superior_Attuned_Superior_Gauntleted_Fist_A: *superior_attuned
+  Superior_Attuned_Superior_Gauntleted_Fist_B: *superior_attuned
+  Superior_Attuned_Superior_Gauntleted_Fist_C: *superior_attuned
+  Superior_Attuned_Superior_Gauntleted_Fist_D: *superior_attuned
+  Superior_Attuned_Superior_Gauntleted_Fist_E: *superior_attuned
+  Superior_Attuned_Superior_Gauntleted_Fist_F: *superior_attuned
 
-# =============================================================================
-# ATTUNED SETS - Default: 4M each
-# =============================================================================
+## Attuned Sets
 attuned:
-  Attuned_Overwhelming_Force_F:
+  Attuned_Overwhelming_Force_F: *attuned
 
-# =============================================================================
-# PURPLE-ONLY SETS - Default: 18M each
-# =============================================================================
+## Purple-Only Sets
 purple_only:
-  Crafted_Apocalypse_A:
-  Crafted_Apocalypse_B:
-  Crafted_Apocalypse_C:
-  Crafted_Apocalypse_D:
-  Crafted_Apocalypse_E:
-  Crafted_Apocalypse_F:
-  Crafted_Ragnarok_A:
-  Crafted_Ragnarok_B:
-  Crafted_Ragnarok_C:
-  Crafted_Ragnarok_D:
-  Crafted_Ragnarok_E:
-  Crafted_Ragnarok_F:
-  Crafted_Armageddon_A:
-  Crafted_Armageddon_B:
-  Crafted_Armageddon_C:
-  Crafted_Armageddon_D:
-  Crafted_Armageddon_E:
-  Crafted_Armageddon_F:
+  Crafted_Apocalypse_A: *purple_only
+  Crafted_Apocalypse_B: *purple_only
+  Crafted_Apocalypse_C: *purple_only
+  Crafted_Apocalypse_D: *purple_only
+  Crafted_Apocalypse_E: *purple_only
+  Crafted_Apocalypse_F: *purple_only
+  Crafted_Ragnarok_A: *purple_only
+  Crafted_Ragnarok_B: *purple_only
+  Crafted_Ragnarok_C: *purple_only
+  Crafted_Ragnarok_D: *purple_only
+  Crafted_Ragnarok_E: *purple_only
+  Crafted_Ragnarok_F: *purple_only
 
-# =============================================================================
-# PVP SETS - Default: 9M each
-# =============================================================================
+## PvP Sets
 pvp:
-  Crafted_Gladiators_Javelin_F:
-  Crafted_Gladiators_Armor_A:
-  Crafted_Gladiators_Armor_B:
-  Crafted_Gladiators_Armor_D:
-  Crafted_Gladiators_Armor_E:
-  Crafted_Gladiators_Armor_F:
-  Crafted_Gladiators_Strike_A:
-  Crafted_Gladiators_Strike_B:
-  Crafted_Gladiators_Strike_C:
-  Crafted_Gladiators_Strike_E:
-  Crafted_Gladiators_Strike_F:
-  Crafted_Shield_Wall_A:
-  Crafted_Shield_Wall_D:
-  Crafted_Shield_Wall_E:
-  Crafted_Shield_Wall_F:
+  Crafted_Gladiators_Javelin_F: *pvp
+  Crafted_Gladiators_Armor_A: *pvp
+  Crafted_Gladiators_Armor_B: *pvp
+  Crafted_Gladiators_Armor_D: *pvp
+  Crafted_Gladiators_Armor_E: *pvp
+  Crafted_Gladiators_Armor_F: *pvp
+  Crafted_Gladiators_Strike_A: *pvp
+  Crafted_Gladiators_Strike_B: *pvp
+  Crafted_Gladiators_Strike_C: *pvp
+  Crafted_Gladiators_Strike_E: *pvp
+  Crafted_Gladiators_Strike_F: *pvp
+  Crafted_Shield_Wall_A: *pvp
+  Crafted_Shield_Wall_D: *pvp
+  Crafted_Shield_Wall_E: *pvp
+  Crafted_Shield_Wall_F: *pvp
+  Crafted_Fury_of_the_Gladiator_F: *pvp
 
-# =============================================================================
-# WINTER SETS - Default: 23M each
-# =============================================================================
+## Winter Sets
 winter:
-  Superior_Attuned_Frozen_Blast_A:
-  Superior_Attuned_Frozen_Blast_B:
-  Superior_Attuned_Frozen_Blast_C:
-  Superior_Attuned_Frozen_Blast_D:
-  Superior_Attuned_Frozen_Blast_E:
-  Superior_Attuned_Avalanche_A:
-  Superior_Attuned_Avalanche_B:
-  Superior_Attuned_Avalanche_C:
-  Superior_Attuned_Avalanche_D:
-  Superior_Attuned_Avalanche_E:
-  Superior_Attuned_Avalanche_F:
-  Superior_Attuned_Blistering_Cold_A:
-  Superior_Attuned_Blistering_Cold_B:
-  Superior_Attuned_Blistering_Cold_C:
-  Superior_Attuned_Blistering_Cold_D:
-  Superior_Attuned_Blistering_Cold_E:
-  Superior_Attuned_Blistering_Cold_F:
+  Superior_Attuned_Frozen_Blast_A: *winter
+  Superior_Attuned_Frozen_Blast_B: *winter
+  Superior_Attuned_Frozen_Blast_C: *winter
+  Superior_Attuned_Frozen_Blast_D: *winter
+  Superior_Attuned_Frozen_Blast_E: *winter
+  Superior_Attuned_Avalanche_A: *winter
+  Superior_Attuned_Avalanche_B: *winter
+  Superior_Attuned_Avalanche_C: *winter
+  Superior_Attuned_Avalanche_D: *winter
+  Superior_Attuned_Avalanche_E: *winter
+  Superior_Attuned_Avalanche_F: *winter
+  Superior_Attuned_Blistering_Cold_A: *winter
+  Superior_Attuned_Blistering_Cold_B: *winter
+  Superior_Attuned_Blistering_Cold_C: *winter
+  Superior_Attuned_Blistering_Cold_D: *winter
+  Superior_Attuned_Blistering_Cold_E: *winter
+  Superior_Attuned_Blistering_Cold_F: *winter
 
-# =============================================================================
-# DEFENSE & RESISTANCE SETS - Default: 5M each
-# =============================================================================
-defense_resist:
-  Crafted_Cloud_Senses_B:
-  Crafted_Cloud_Senses_C:
-  Crafted_Cloud_Senses_D:
-  Crafted_Cloud_Senses_E:
-  Crafted_Preventive_Medicine_A:
-  Crafted_Preventive_Medicine_B:
-  Crafted_Preventive_Medicine_C:
-  Crafted_Preventive_Medicine_D:
-  Crafted_Preventive_Medicine_E:
-  Crafted_Preventive_Medicine_F:
-  Crafted_Reactive_Defenses_A:
-  Crafted_Reactive_Defenses_B:
-  Crafted_Reactive_Defenses_C:
-  Crafted_Reactive_Defenses_D:
-  Crafted_Reactive_Defenses_E:
-  Crafted_Reactive_Defenses_F:
-  Crafted_Steadfast_Protection_A:
-  Crafted_Steadfast_Protection_B:
-  Crafted_Steadfast_Protection_C:
-  Crafted_Unbreakable_Guard_A:
-  Crafted_Unbreakable_Guard_B:
-  Crafted_Unbreakable_Guard_C:
-  Crafted_Unbreakable_Guard_D:
-  Crafted_Unbreakable_Guard_E:
-  Crafted_Unbreakable_Guard_F:
-  Crafted_Winters_Gift_C:
-  Crafted_Aegis_A:
-  Crafted_Aegis_B:
-  Crafted_Aegis_C:
-  Crafted_Aegis_D:
-  Crafted_Aegis_E:
-# =============================================================================
-# CRAFTED SETS - Organized by type with defaults
-# =============================================================================
+# =====================
+# DEFENSIVE SETS
+# =====================
 
-# Damage Sets - Default: 1.2M each
-damage_sets:
-  Crafted_Annihilation_A:
-  Crafted_Annihilation_B:
-  Crafted_Annihilation_C:
-  Crafted_Annihilation_D:
-  Crafted_Annihilation_E:
-  Crafted_Annihilation_F:
-  Crafted_Armageddon_A:
-  Crafted_Armageddon_C:
-  Crafted_Armageddon_D:
-  Crafted_Armageddon_E:
-  Crafted_Armageddon_F:
-  Crafted_Bombardment_F:
-  Crafted_Positrons_Blast_F:
-  Crafted_Ice_Mistrals_Torment_F:
-  Crafted_Impeded_Swiftness_F:
-  Crafted_Sting_of_the_Manticore_F:
-  Crafted_Decimation_F:
-  Crafted_Eradication_F:
-  Crafted_Fury_of_the_Gladiator_F:
-  Crafted_Hecatomb_B:
-  Crafted_Hecatomb_C:
-  Crafted_Hecatomb_D:
-  Crafted_Hecatomb_E:
-  Crafted_Hecatomb_F:
-  Crafted_Obliteration_A:
-  Crafted_Obliteration_B:
-  Crafted_Obliteration_C:
-  Crafted_Obliteration_D:
-  Crafted_Obliteration_E:
-  Crafted_Obliteration_F:
-  Crafted_Sciroccos_Dervish_A:
-  Crafted_Sciroccos_Dervish_B:
-  Crafted_Sciroccos_Dervish_C:
-  Crafted_Sciroccos_Dervish_D:
-  Crafted_Sciroccos_Dervish_E:
-  Crafted_Sciroccos_Dervish_F:
-  Crafted_Touch_of_Death_A:
-  Crafted_Touch_of_Death_B:
-  Crafted_Touch_of_Death_C:
-  Crafted_Touch_of_Death_D:
-  Crafted_Touch_of_Death_E:
-  Crafted_Touch_of_Death_F:
+## Accurate Healing
+accurate_healing:
+  Crafted_Doctored_Wounds_A: *healing_sets
+  Crafted_Doctored_Wounds_B: *healing_sets
+  Crafted_Doctored_Wounds_C: *healing_sets
+  Crafted_Doctored_Wounds_D: *healing_sets
+  Crafted_Doctored_Wounds_E: *healing_sets
+  Crafted_Doctored_Wounds_F: *healing_sets
 
-# Control Sets - Default: 1.0M each
-control_sets:
-  Crafted_Unbreakable_Constraint_A:
-  Crafted_Unbreakable_Constraint_B:
-  Crafted_Unbreakable_Constraint_C:
-  Crafted_Unbreakable_Constraint_D:
-  Crafted_Unbreakable_Constraint_E:
-  Crafted_Unbreakable_Constraint_F:
-  Crafted_Ghost_Widows_Embrace_F:
-  Crafted_Neuronic_Shutdown_F:
-  Crafted_Stupefy_A:
-  Crafted_Stupefy_B:
-  Crafted_Stupefy_C:
-  Crafted_Stupefy_D:
-  Crafted_Stupefy_E:
-  Crafted_Sudden_Acceleration_F:
-  Crafted_Razzle_Dazzle_A:
-  Crafted_Razzle_Dazzle_B:
-  Crafted_Razzle_Dazzle_C:
-  Crafted_Razzle_Dazzle_D:
-  Crafted_Razzle_Dazzle_E:
-
-# Melee Sets - Default: 1.0M each
-melee_sets:
-  Crafted_Bruising_Blow_A:
-  Crafted_Bruising_Blow_B:
-  Crafted_Crushing_Impact_A:
-  Crafted_Crushing_Impact_B:
-  Crafted_Crushing_Impact_C:
-  Crafted_Crushing_Impact_D:
-  Crafted_Crushing_Impact_E:
-  Crafted_Kinetic_Combat_A:
-  Crafted_Kinetic_Combat_B:
-  Crafted_Kinetic_Combat_C:
-  Crafted_Kinetic_Combat_D:
-  Crafted_Multi_Strike_B:
-  Crafted_Multi_Strike_D:
-
-# Utility Sets - Default: 1.0M each (some overrides)
-utility_sets:
-  Crafted_Adjusted_Targeting_A:
-  Crafted_Adjusted_Targeting_B:
-  Crafted_Adjusted_Targeting_C:
-  Crafted_Adjusted_Targeting_D:
-  Crafted_Adjusted_Targeting_E:
-  Crafted_Adjusted_Targeting_F:
-  Crafted_Kismet_E: 2.0  # Override: more expensive
-  Crafted_Force_Feedback_F: 2.0  # Override: more expensive
-  Crafted_Synapses_Shock_A:
-  Crafted_Synapses_Shock_C:
-  Crafted_Synapses_Shock_F:
-  Crafted_Shrapnel_A:
-  Crafted_Shrapnel_B:
-  Crafted_Shrapnel_C:
-  Crafted_Shrapnel_D:
-  Crafted_Shrapnel_F:
-  Crafted_Gaussians_Synchronized_FireControl_B:
-  Crafted_Gaussians_Synchronized_FireControl_D:
-  Crafted_Gaussians_Synchronized_FireControl_F:
-  Crafted_Rectified_Reticle_A:
-  Crafted_Rectified_Reticle_B:
-  Crafted_Power_Transfer_F:
-
-# Healing Sets - Default: 1.0M each
+## Healing
 healing_sets:
-  Crafted_Harmonized_Healing_A:
-  Crafted_Harmonized_Healing_E:
-  Crafted_Numinas_Convalesence_C:
-  Crafted_Numinas_Convalesence_E:
-  Crafted_Numinas_Convalesence_F:
-  Crafted_Panacea_F:
-  Crafted_Miracle_F:
-  Crafted_Performance_Shifter_A:
-  Crafted_Performance_Shifter_F:
-  Crafted_Touch_of_the_Nictus_C:
+  Crafted_Harmonized_Healing_A: *healing_sets
+  Crafted_Harmonized_Healing_E: *healing_sets
+  Crafted_Numinas_Convalesence_C: *healing_sets
+  Crafted_Numinas_Convalesence_E: *healing_sets
+  Crafted_Numinas_Convalesence_F: *healing_sets
+  Crafted_Panacea_F: 12.0
+  Crafted_Miracle_F: 4.0
+  Crafted_Touch_of_the_Nictus_C: *healing_sets
+  Crafted_Regenerative_Tissue_A: *healing_sets
+  Crafted_Regenerative_Tissue_B: *healing_sets
+  Crafted_Regenerative_Tissue_C: *healing_sets
+  Crafted_Regenerative_Tissue_D: *healing_sets
+  Crafted_Regenerative_Tissue_E: *healing_sets
+  Crafted_Regenerative_Tissue_F: *healing_sets
 
-# Taunt Sets - Default: 1.0M each
+## Defense
+defense_resist:
+  Crafted_Cloud_Senses_A: *defense_resist
+  Crafted_Cloud_Senses_B: *defense_resist
+  Crafted_Cloud_Senses_C: *defense_resist
+  Crafted_Cloud_Senses_D: *defense_resist
+  Crafted_Cloud_Senses_E: *defense_resist
+  Crafted_Cloud_Senses_F: *defense_resist
+  Crafted_Preventive_Medicine_A: *defense_resist
+  Crafted_Preventive_Medicine_B: *defense_resist
+  Crafted_Preventive_Medicine_C: *defense_resist
+  Crafted_Preventive_Medicine_D: *defense_resist
+  Crafted_Preventive_Medicine_E: *defense_resist
+  Crafted_Preventive_Medicine_F: *defense_resist
+  Crafted_Reactive_Defenses_A: *defense_resist
+  Crafted_Reactive_Defenses_B: *defense_resist
+  Crafted_Reactive_Defenses_C: *defense_resist
+  Crafted_Reactive_Defenses_D: *defense_resist
+  Crafted_Reactive_Defenses_E: *defense_resist
+  Crafted_Reactive_Defenses_F: *defense_resist
+  Crafted_Steadfast_Protection_A: *defense_resist
+  Crafted_Steadfast_Protection_B: *defense_resist
+  Crafted_Steadfast_Protection_C: *defense_resist
+  Crafted_Unbreakable_Guard_A: *defense_resist
+  Crafted_Unbreakable_Guard_B: *defense_resist
+  Crafted_Unbreakable_Guard_C: *defense_resist
+  Crafted_Unbreakable_Guard_D: *defense_resist
+  Crafted_Unbreakable_Guard_E: *defense_resist
+  Crafted_Unbreakable_Guard_F: *defense_resist
+  Crafted_Winters_Gift_A: *defense_resist
+  Crafted_Winters_Gift_B: *defense_resist
+  Crafted_Winters_Gift_C: *defense_resist
+  Crafted_Winters_Gift_D: *defense_resist
+  Crafted_Winters_Gift_E: *defense_resist
+  Crafted_Winters_Gift_F: *defense_resist
+  Crafted_Aegis_A: *defense_resist
+  Crafted_Aegis_B: *defense_resist
+  Crafted_Aegis_C: *defense_resist
+  Crafted_Aegis_D: *defense_resist
+  Crafted_Aegis_E: *defense_resist
+
+## Defense
+defense_sets:
+  Crafted_Luck_of_the_Gambler_A: *lotg
+  Crafted_Luck_of_the_Gambler_B: *lotg
+  Crafted_Luck_of_the_Gambler_C: *lotg
+  Crafted_Luck_of_the_Gambler_D: *lotg
+  Crafted_Luck_of_the_Gambler_E: *lotg
+  Crafted_Luck_of_the_Gambler_F: *lotg
+
+## Resist Damage
+resist_damage:
+  Crafted_Impervious_Skin_A: *defense_resist
+  Crafted_Impervious_Skin_B: *defense_resist
+  Crafted_Impervious_Skin_C: *defense_resist
+  Crafted_Impervious_Skin_D: *defense_resist
+  Crafted_Impervious_Skin_E: *defense_resist
+  Crafted_Impervious_Skin_F: *defense_resist
+  Crafted_Titanium_Coating_A: *defense_resist
+  Crafted_Titanium_Coating_B: *defense_resist
+  Crafted_Titanium_Coating_C: *defense_resist
+  Crafted_Titanium_Coating_D: *defense_resist
+  Crafted_Titanium_Coating_E: *defense_resist
+  Crafted_Titanium_Coating_F: *defense_resist
+
+# =====================
+# MEZ SETS
+# =====================
+
+## Confuse
+confuse_sets:
+  Crafted_Coercive_Persuasion_A: *control_sets
+  Crafted_Coercive_Persuasion_B: *control_sets
+  Crafted_Coercive_Persuasion_C: *control_sets
+  Crafted_Coercive_Persuasion_D: *control_sets
+  Crafted_Coercive_Persuasion_E: *control_sets
+  Crafted_Coercive_Persuasion_F: *control_sets
+
+## Fear
+fear_sets:
+  Crafted_Ghost_Widows_Embrace_A: *control_sets
+  Crafted_Ghost_Widows_Embrace_B: *control_sets
+  Crafted_Ghost_Widows_Embrace_C: *control_sets
+  Crafted_Ghost_Widows_Embrace_D: *control_sets
+  Crafted_Ghost_Widows_Embrace_E: *control_sets
+  Crafted_Ghost_Widows_Embrace_F: *control_sets
+
+## Holds
+control_sets:
+  Crafted_Unbreakable_Constraint_A: *control_sets
+  Crafted_Unbreakable_Constraint_B: *control_sets
+  Crafted_Unbreakable_Constraint_C: *control_sets
+  Crafted_Unbreakable_Constraint_D: *control_sets
+  Crafted_Unbreakable_Constraint_E: *control_sets
+  Crafted_Unbreakable_Constraint_F: *control_sets
+  Crafted_Neuronic_Shutdown_A: *control_sets
+  Crafted_Neuronic_Shutdown_B: *control_sets
+  Crafted_Neuronic_Shutdown_C: *control_sets
+  Crafted_Neuronic_Shutdown_D: *control_sets
+  Crafted_Neuronic_Shutdown_E: *control_sets
+  Crafted_Neuronic_Shutdown_F: *control_sets
+  Crafted_Stupefy_A: *control_sets
+  Crafted_Stupefy_B: *control_sets
+  Crafted_Stupefy_C: *control_sets
+  Crafted_Stupefy_D: *control_sets
+  Crafted_Stupefy_E: *control_sets
+  Crafted_Stupefy_F: *control_sets
+  Crafted_Sudden_Acceleration_A: *control_sets
+  Crafted_Sudden_Acceleration_B: *control_sets
+  Crafted_Sudden_Acceleration_C: *control_sets
+  Crafted_Sudden_Acceleration_D: *control_sets
+  Crafted_Sudden_Acceleration_E: *control_sets
+  Crafted_Sudden_Acceleration_F: *control_sets
+  Crafted_Razzle_Dazzle_A: *control_sets
+  Crafted_Razzle_Dazzle_B: *control_sets
+  Crafted_Razzle_Dazzle_C: *control_sets
+  Crafted_Razzle_Dazzle_D: *control_sets
+  Crafted_Razzle_Dazzle_E: *control_sets
+  Crafted_Razzle_Dazzle_F: *control_sets
+
+## Immobilize
+immobilize_sets:
+  Crafted_Entomb_A: *control_sets
+  Crafted_Entomb_B: *control_sets
+  Crafted_Entomb_C: *control_sets
+  Crafted_Entomb_D: *control_sets
+  Crafted_Entomb_E: *control_sets
+  Crafted_Entomb_F: *control_sets
+  Crafted_Basilisks_Gaze_A: *control_sets
+  Crafted_Basilisks_Gaze_B: *control_sets
+  Crafted_Basilisks_Gaze_C: *control_sets
+  Crafted_Basilisks_Gaze_D: *control_sets
+  Crafted_Basilisks_Gaze_E: *control_sets
+  Crafted_Basilisks_Gaze_F: *control_sets
+
+## Knockback
+knockback_sets:
+  Crafted_Force_Feedback_A: *utility_sets
+  Crafted_Force_Feedback_B: *utility_sets
+  Crafted_Force_Feedback_C: *utility_sets
+  Crafted_Force_Feedback_D: *utility_sets
+  Crafted_Force_Feedback_E: *utility_sets
+  Crafted_Force_Feedback_F: 2.0
+
+## Sleep
+sleep_sets:
+  Crafted_Nightmare_A: *control_sets
+  Crafted_Nightmare_B: *control_sets
+  Crafted_Nightmare_C: *control_sets
+  Crafted_Nightmare_D: *control_sets
+  Crafted_Nightmare_E: *control_sets
+  Crafted_Nightmare_F: *control_sets
+
+## Stuns
+stun_sets:
+  # Stupefy and Razzle Dazzle are already in control_sets above
+  # This section intentionally left empty as stuns are handled in control_sets
+  dummy_entry: 0.0  # Placeholder to prevent YAML parsing issues
+
+## Threat Duration
 taunt_sets:
-  Crafted_Mocking_Beratement_A:
-  Crafted_Mocking_Beratement_B:
-  Crafted_Mocking_Beratement_C:
-  Crafted_Mocking_Beratement_D:
-  Crafted_Mocking_Beratement_E:
-  Crafted_Mocking_Beratement_F:
+  Crafted_Mocking_Beratement_A: *taunt_sets
+  Crafted_Mocking_Beratement_B: *taunt_sets
+  Crafted_Mocking_Beratement_C: *taunt_sets
+  Crafted_Mocking_Beratement_D: *taunt_sets
+  Crafted_Mocking_Beratement_E: *taunt_sets
+  Crafted_Mocking_Beratement_F: *taunt_sets
+  Crafted_Perfect_Zinger_A: *damage_sets
+  Crafted_Perfect_Zinger_B: *damage_sets
+  Crafted_Perfect_Zinger_C: *damage_sets
+  Crafted_Perfect_Zinger_D: *damage_sets
+  Crafted_Perfect_Zinger_E: *damage_sets
+  Crafted_Perfect_Zinger_F: *damage_sets
 
-# Special Sets - Default: 2.0M each (LotG has its own category)
+# =====================
+# TRAVEL SETS
+# =====================
+
+## Universal Travel
+travel_sets:
+  Crafted_Blessing_of_the_Zephyr_A: *special_sets
+  Crafted_Blessing_of_the_Zephyr_B: *special_sets
+  Crafted_Blessing_of_the_Zephyr_C: *special_sets
+  Crafted_Blessing_of_the_Zephyr_D: *special_sets
+  Crafted_Blessing_of_the_Zephyr_E: *special_sets
+  Crafted_Blessing_of_the_Zephyr_F: *special_sets
+
+# =====================
+# OTHER SETS
+# =====================
+
+## To Hit Buff
+tohit_buff_sets:
+  Crafted_Adjusted_Targeting_A: *utility_sets
+  Crafted_Adjusted_Targeting_B: *utility_sets
+  Crafted_Adjusted_Targeting_C: *utility_sets
+  Crafted_Adjusted_Targeting_D: *utility_sets
+  Crafted_Adjusted_Targeting_E: *utility_sets
+  Crafted_Adjusted_Targeting_F: *utility_sets
+  Crafted_Kismet_E: 3.0
+  Crafted_Synapses_Shock_A: *utility_sets
+  Crafted_Synapses_Shock_C: *utility_sets
+  Crafted_Synapses_Shock_F: *utility_sets
+  Crafted_Shrapnel_A: *utility_sets
+  Crafted_Shrapnel_B: *utility_sets
+  Crafted_Shrapnel_C: *utility_sets
+  Crafted_Shrapnel_D: *utility_sets
+  Crafted_Shrapnel_F: *utility_sets
+  Crafted_Gaussians_Synchronized_FireControl_A: *utility_sets
+  Crafted_Gaussians_Synchronized_FireControl_B: *utility_sets
+  Crafted_Gaussians_Synchronized_FireControl_C: *utility_sets
+  Crafted_Gaussians_Synchronized_FireControl_D: *utility_sets
+  Crafted_Gaussians_Synchronized_FireControl_E: *utility_sets
+  Crafted_Gaussians_Synchronized_FireControl_F: 2.0
+  Crafted_Rectified_Reticle_A: *utility_sets
+  Crafted_Rectified_Reticle_B: *utility_sets
+  Crafted_Rectified_Reticle_C: *utility_sets
+  Crafted_Rectified_Reticle_D: *utility_sets
+  Crafted_Rectified_Reticle_E: *utility_sets
+  Crafted_Rectified_Reticle_F: *utility_sets
+  Crafted_Power_Transfer_A: *utility_sets
+  Crafted_Power_Transfer_B: *utility_sets
+  Crafted_Power_Transfer_C: *utility_sets
+  Crafted_Power_Transfer_D: *utility_sets
+  Crafted_Power_Transfer_E: *utility_sets
+  Crafted_Power_Transfer_F: *utility_sets
+  Crafted_Encouraged_Accuracy_A: *utility_sets
+  Crafted_Encouraged_Accuracy_B: *utility_sets
+  Crafted_Encouraged_Accuracy_C: *utility_sets
+  Crafted_Encouraged_Accuracy_D: *utility_sets
+  Crafted_Encouraged_Accuracy_E: *utility_sets
+  Crafted_Encouraged_Accuracy_F: *utility_sets
+
+## To Hit Debuff
+tohit_debuff_sets:
+  Crafted_Discouraging_Words_A: *utility_sets
+  Crafted_Discouraging_Words_B: *utility_sets
+  Crafted_Discouraging_Words_C: *utility_sets
+  Crafted_Deflated_Ego_A: *utility_sets
+  Crafted_Deflated_Ego_B: *utility_sets
+  Crafted_Deflated_Ego_C: *utility_sets
+  Crafted_Dampened_Spirits_A: *utility_sets
+  Crafted_Dampened_Spirits_B: *utility_sets
+  Crafted_Dampened_Spirits_C: *utility_sets
+  Crafted_Dampened_Spirits_D: *utility_sets
+  Crafted_Dampened_Spirits_E: *utility_sets
+  Crafted_Dampened_Spirits_F: *utility_sets
+  Crafted_Dark_Watchers_Despair_A: *utility_sets
+  Crafted_Dark_Watchers_Despair_B: *utility_sets
+  Crafted_Dark_Watchers_Despair_C: *utility_sets
+  Crafted_Dark_Watchers_Despair_D: *utility_sets
+  Crafted_Dark_Watchers_Despair_E: *utility_sets
+  Crafted_Dark_Watchers_Despair_F: *utility_sets
+
+## Endurance Modification
+endurance_sets:
+  Crafted_Debiliative_Action_A: *special_sets
+  Crafted_Debiliative_Action_B: *special_sets
+  Crafted_Debiliative_Action_C: *special_sets
+  Crafted_Debiliative_Action_D: *special_sets
+  Crafted_Debiliative_Action_E: *special_sets
+  Crafted_Debiliative_Action_F: *special_sets
+  Crafted_Performance_Shifter_A: 3.0
+  Crafted_Performance_Shifter_B: 2.0
+  Crafted_Performance_Shifter_C: 2.0
+  Crafted_Performance_Shifter_D: 2.0
+  Crafted_Performance_Shifter_E: 2.0
+  Crafted_Performance_Shifter_F: 3.0
+
+## Slow Movement
+slow_movement_sets:
+  Crafted_Impeded_Swiftness_A: *damage_sets
+  Crafted_Impeded_Swiftness_B: *damage_sets
+  Crafted_Impeded_Swiftness_C: *damage_sets
+  Crafted_Impeded_Swiftness_D: *damage_sets
+  Crafted_Impeded_Swiftness_E: *damage_sets
+  Crafted_Impeded_Swiftness_F: *damage_sets
+
+## Special Sets
 special_sets:
-  Crafted_Blessing_of_the_Zephyr_C:
-  Crafted_Aegis_A:
-  Crafted_Aegis_D:
-  Crafted_Aegis_E:
-  Crafted_Aegis_F:
-  Crafted_Debiliative_Action_A:
-  Crafted_Debiliative_Action_B:
-  Crafted_Debiliative_Action_C:
-  Crafted_Debiliative_Action_D:
-  Crafted_Debiliative_Action_E:
-  Crafted_Debiliative_Action_F:
 
-# LotG Sets - Default: 25M each
-lotg:
-  Crafted_Luck_of_the_Gambler_A:
-  Crafted_Luck_of_the_Gambler_E:
-  Crafted_Luck_of_the_Gambler_F:
-
-# =============================================================================
-# HAMIDON ENHANCEMENTS - Default: 2M each
-# =============================================================================
+## Hamidon Enhancements
 hamidon:
-  Hamidon_Damage_Accuracy:
+  Hamidon_Damage_Accuracy: *hamidon
 
-# =============================================================================
-# COMMON IOs - Default: 0.2M each
-# =============================================================================
+## Common IOs
 common_io:
-  Crafted_Accuracy:
-  Crafted_Damage:
-  Crafted_Defense_Buff:
-  Crafted_Endurance_Discount:
-  Crafted_Heal:
-  Crafted_Jump:
-  Crafted_Recharge:
-  Crafted_Recovery:
-  Crafted_Res_Damage:
-  Crafted_Run:
-  Crafted_ToHit_Buff: 
+  Crafted_Accuracy: *common_io
+  Crafted_Damage: *common_io
+  Crafted_Defense_Buff: *common_io
+  Crafted_Endurance_Discount: *common_io
+  Crafted_Heal: *common_io
+  Crafted_Jump: *common_io
+  Crafted_Recharge: *common_io
+  Crafted_Recovery: *common_io
+  Crafted_Res_Damage: *common_io
+  Crafted_Run: *common_io
+  Crafted_ToHit_Buff: *common_io 
