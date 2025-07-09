@@ -15,6 +15,7 @@ defaults:
   healing_sets: &healing_sets 1.0
   taunt_sets: &taunt_sets 1.0
   special_sets: &special_sets 2.0
+  travel_sets: &travel_sets 2.0
   lotg: &lotg 5.0
   hamidon: &hamidon 10.0
   common_io: &common_io 0.2
@@ -50,6 +51,12 @@ melee_damage:
   Crafted_Pounding_Slugfest_D: *melee_sets
   Crafted_Pounding_Slugfest_E: *melee_sets
   Crafted_Pounding_Slugfest_F: *melee_sets
+  Superior_Attuned_Blistering_Cold_A: *winter
+  Superior_Attuned_Blistering_Cold_B: *winter
+  Superior_Attuned_Blistering_Cold_C: *winter
+  Superior_Attuned_Blistering_Cold_D: *winter
+  Superior_Attuned_Blistering_Cold_E: *winter
+  Superior_Attuned_Blistering_Cold_F: *winter
 
 ## Melee AoE Damage
 melee_aoe_damage:
@@ -77,6 +84,12 @@ melee_aoe_damage:
   Crafted_Hecatomb_D : *purple_only
   Crafted_Hecatomb_E : *purple_only
   Crafted_Hecatomb_F : *purple_only
+  Superior_Attuned_Avalanche_A: *winter
+  Superior_Attuned_Avalanche_B: *winter
+  Superior_Attuned_Avalanche_C: *winter
+  Superior_Attuned_Avalanche_D: *winter
+  Superior_Attuned_Avalanche_E: *winter
+  Superior_Attuned_Avalanche_F: *winter
 
 ## Pet Damage
 pet_damage:
@@ -140,6 +153,17 @@ ranged_damage:
   Crafted_Trap_of_the_Hunter_D: *damage_sets
   Crafted_Trap_of_the_Hunter_E: *damage_sets
   Crafted_Trap_of_the_Hunter_F: *damage_sets
+  Crafted_Entropic_Chaos_A: *damage_sets
+  Crafted_Entropic_Chaos_B: *damage_sets
+  Crafted_Entropic_Chaos_C: *damage_sets
+  Crafted_Entropic_Chaos_D: *damage_sets
+  Crafted_Entropic_Chaos_E: *damage_sets
+  Crafted_Entropic_Chaos_F: *damage_sets
+  Superior_Attuned_Frozen_Blast_A: *winter
+  Superior_Attuned_Frozen_Blast_B: *winter
+  Superior_Attuned_Frozen_Blast_C: *winter
+  Superior_Attuned_Frozen_Blast_D: *winter
+  Superior_Attuned_Frozen_Blast_E: *winter
 
 ## Ranged AoE Damage
 ranged_aoe_damage:
@@ -214,11 +238,17 @@ superior_attuned:
   Superior_Attuned_Superior_Blasters_Wrath_E: *superior_attuned
   Superior_Attuned_Superior_Blasters_Wrath_F: *superior_attuned
   Superior_Attuned_Superior_Brutes_Fury_A: *superior_attuned
+  Superior_Attuned_Superior_Brutes_Fury_B: *superior_attuned
   Superior_Attuned_Superior_Brutes_Fury_C: *superior_attuned
   Superior_Attuned_Superior_Brutes_Fury_D: *superior_attuned
   Superior_Attuned_Superior_Brutes_Fury_E: *superior_attuned
   Superior_Attuned_Superior_Brutes_Fury_F: *superior_attuned
-  Superior_Attuned_Superior_Critical_Strikes_F: *superior_attuned
+  Superior_Attuned_Superior_Unrelenting_Fury_A: *superior_attuned
+  Superior_Attuned_Superior_Unrelenting_Fury_B: *superior_attuned
+  Superior_Attuned_Superior_Unrelenting_Fury_C: *superior_attuned
+  Superior_Attuned_Superior_Unrelenting_Fury_D: *superior_attuned
+  Superior_Attuned_Superior_Unrelenting_Fury_E: *superior_attuned
+  Superior_Attuned_Superior_Unrelenting_Fury_F: *superior_attuned
   Superior_Attuned_Superior_Essence_Transfer_A: *superior_attuned
   Superior_Attuned_Superior_Essence_Transfer_B: *superior_attuned
   Superior_Attuned_Superior_Essence_Transfer_C: *superior_attuned
@@ -236,9 +266,6 @@ superior_attuned:
   Superior_Attuned_Superior_Scrappers_Strike_C: *superior_attuned
   Superior_Attuned_Superior_Scrappers_Strike_D: *superior_attuned
   Superior_Attuned_Superior_Scrappers_Strike_F: *superior_attuned
-  Superior_Attuned_Superior_Unrelenting_Fury_A: *superior_attuned
-  Superior_Attuned_Superior_Unrelenting_Fury_E: *superior_attuned
-  Superior_Attuned_Superior_Unrelenting_Fury_F: *superior_attuned
   Superior_Attuned_Winters_Bite_A: *superior_attuned
   Superior_Attuned_Winters_Bite_B: *superior_attuned
   Superior_Attuned_Winters_Bite_C: *superior_attuned
@@ -297,24 +324,6 @@ pvp:
   Crafted_Fury_of_the_Gladiator_F: *pvp
 
 ## Winter Sets
-winter:
-  Superior_Attuned_Frozen_Blast_A: *winter
-  Superior_Attuned_Frozen_Blast_B: *winter
-  Superior_Attuned_Frozen_Blast_C: *winter
-  Superior_Attuned_Frozen_Blast_D: *winter
-  Superior_Attuned_Frozen_Blast_E: *winter
-  Superior_Attuned_Avalanche_A: *winter
-  Superior_Attuned_Avalanche_B: *winter
-  Superior_Attuned_Avalanche_C: *winter
-  Superior_Attuned_Avalanche_D: *winter
-  Superior_Attuned_Avalanche_E: *winter
-  Superior_Attuned_Avalanche_F: *winter
-  Superior_Attuned_Blistering_Cold_A: *winter
-  Superior_Attuned_Blistering_Cold_B: *winter
-  Superior_Attuned_Blistering_Cold_C: *winter
-  Superior_Attuned_Blistering_Cold_D: *winter
-  Superior_Attuned_Blistering_Cold_E: *winter
-  Superior_Attuned_Blistering_Cold_F: *winter
 
 # =====================
 # DEFENSIVE SETS
@@ -333,7 +342,10 @@ accurate_healing:
 healing_sets:
   Crafted_Harmonized_Healing_A: *healing_sets
   Crafted_Harmonized_Healing_E: *healing_sets
+  Crafted_Numinas_Convalesence_A: *healing_sets
+  Crafted_Numinas_Convalesence_B: *healing_sets
   Crafted_Numinas_Convalesence_C: *healing_sets
+  Crafted_Numinas_Convalesence_D: *healing_sets
   Crafted_Numinas_Convalesence_E: *healing_sets
   Crafted_Numinas_Convalesence_F: *healing_sets
   Crafted_Panacea_F: 12.0
@@ -386,6 +398,7 @@ defense_resist:
   Crafted_Aegis_C: *defense_resist
   Crafted_Aegis_D: *defense_resist
   Crafted_Aegis_E: *defense_resist
+  Crafted_Aegis_F: *defense_resist
 
 ## Defense
 defense_sets:
@@ -466,6 +479,14 @@ control_sets:
   Crafted_Razzle_Dazzle_E: *control_sets
   Crafted_Razzle_Dazzle_F: *control_sets
 
+hold_sets:
+  Superior_Attuned_Entomb_A: *winter
+  Superior_Attuned_Entomb_B: *winter
+  Superior_Attuned_Entomb_C: *winter
+  Superior_Attuned_Entomb_D: *winter
+  Superior_Attuned_Entomb_E: *winter
+  Superior_Attuned_Entomb_F: *winter
+
 ## Immobilize
 immobilize_sets:
   Crafted_Entomb_A: *control_sets
@@ -532,6 +553,14 @@ travel_sets:
   Crafted_Blessing_of_the_Zephyr_D: *special_sets
   Crafted_Blessing_of_the_Zephyr_E: *special_sets
   Crafted_Blessing_of_the_Zephyr_F: *special_sets
+
+running_sprinting:
+  Crafted_Celerity_A: *travel_sets
+  Crafted_Celerity_B: *travel_sets
+  Crafted_Celerity_C: *travel_sets
+  Crafted_Celerity_D: *travel_sets
+  Crafted_Celerity_E: *travel_sets
+  Crafted_Celerity_F: *travel_sets
 
 # =====================
 # OTHER SETS
