@@ -37,6 +37,7 @@ melee_damage:
   Crafted_Kinetic_Combat_B: *melee_sets
   Crafted_Kinetic_Combat_C: *melee_sets
   Crafted_Kinetic_Combat_D: *melee_sets
+  Crafted_Kinetic_Combat_E: *melee_sets
   Crafted_Multi_Strike_B: *melee_sets
   Crafted_Multi_Strike_D: *melee_sets
   Crafted_Bonesnap_A: *melee_sets
@@ -265,6 +266,7 @@ superior_attuned:
   Superior_Attuned_Superior_Scrappers_Strike_B: *superior_attuned
   Superior_Attuned_Superior_Scrappers_Strike_C: *superior_attuned
   Superior_Attuned_Superior_Scrappers_Strike_D: *superior_attuned
+  Superior_Attuned_Superior_Scrappers_Strike_E: *superior_attuned
   Superior_Attuned_Superior_Scrappers_Strike_F: *superior_attuned
   Superior_Attuned_Winters_Bite_A: *superior_attuned
   Superior_Attuned_Winters_Bite_B: *superior_attuned
@@ -284,6 +286,12 @@ superior_attuned:
   Superior_Attuned_Superior_Gauntleted_Fist_D: *superior_attuned
   Superior_Attuned_Superior_Gauntleted_Fist_E: *superior_attuned
   Superior_Attuned_Superior_Gauntleted_Fist_F: *superior_attuned
+  Superior_Attuned_Superior_Critical_Strikes_A: *superior_attuned
+  Superior_Attuned_Superior_Critical_Strikes_B: *superior_attuned
+  Superior_Attuned_Superior_Critical_Strikes_C: *superior_attuned
+  Superior_Attuned_Superior_Critical_Strikes_D: *superior_attuned
+  Superior_Attuned_Superior_Critical_Strikes_E: *superior_attuned
+  Superior_Attuned_Superior_Critical_Strikes_F: *superior_attuned
 
 ## Attuned Sets
 attuned:
